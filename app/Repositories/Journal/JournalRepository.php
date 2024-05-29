@@ -197,7 +197,7 @@ class JournalRepository implements JournalRepositoryInterface
             ->orderBy('date', 'DESC')
         ;
         if ('' !== $search) {
-            $query->where('description', 'LIKE', sprintf('%%%s%%', $search));
+            $query->where('description', 'ILIKE', sprintf('%%%s%%', $search));
         }
 
         return $query->take($limit)->get();
