@@ -62,6 +62,6 @@ class TransactionTypeRepository implements TransactionTypeRepositoryInterface
             return TransactionType::get();
         }
 
-        return TransactionType::where('type', 'LIKE', sprintf('%%%s%%', $query))->take($limit)->get();
+        return TransactionType::where('type', 'ILIKE', sprintf('%%%s%%', $query))->take($limit)->get();
     }
 }

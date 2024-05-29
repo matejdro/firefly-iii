@@ -151,7 +151,7 @@ class Preferences
 
     public function beginsWith(User $user, string $search): Collection
     {
-        return Preference::where('user_id', $user->id)->where('name', 'LIKE', $search.'%')->get();
+        return Preference::where('user_id', $user->id)->where('name', 'ILIKE', $search.'%')->get();
     }
 
     /**
