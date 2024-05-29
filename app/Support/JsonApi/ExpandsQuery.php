@@ -64,7 +64,7 @@ trait ExpandsQuery
             foreach ($filters->all() as $filter) {
                 if (in_array($filter->key(), $config, true)) {
                     foreach ($filter->value() as $value) {
-                        $q->where($filter->key(), 'LIKE', sprintf('%%%s%%', $value));
+                        $q->where($filter->key(), 'ILIKE', sprintf('%%%s%%', $value));
                     }
                 }
             }
